@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Map, Reduce, Pipe</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    label, select, input, button { margin: 5px; }
+    .pipe-step { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Map, Reduce, Pipe</h1>
+
+  <label for="numberInput">Unesi brojeve (odvojene zarezima):</label><br>
+  <input type="text" id="numberInput" placeholder="npr. 1,2,3,4,5"><br><br>
+
+  <h2>Map</h2>
+  <select id="mapOperation">
+    <option value="square">x²</option>
+    <option value="cube">x³</option>
+    <option value="add">x + n</option>
+    <option value="subtract">x - n</option>
+    <option value="multiply">x * n</option>
+    <option value="divide">x / n</option>
+  </select>
+  <input type="number" id="mapValue" placeholder="Unesi n (ako treba)">
+  <button onclick="handleMap()">Primijeni map</button>
+  <p id="mapResult"></p>
+
+  <h2>Reduce</h2>
+  <select id="reduceOperation">
+    <option value="sum">Zbroji sve</option>
+    <option value="multiply">Pomnoži sve</option>
+  </select>
+  <button onclick="handleReduce()">Primijeni reduce</button>
+  <p id="reduceResult"></p>
+
+  <h2>Pipe</h2>
+  <div id="pipeSteps"></div>
+  <button onclick="addPipeStep()">Dodaj korak</button>
+  <button onclick="runPipe()">Pokreni pipe</button>
+  <p id="pipeResult"></p>
+
+  <script src="functions.js"></script>
+</body>
+</html>
